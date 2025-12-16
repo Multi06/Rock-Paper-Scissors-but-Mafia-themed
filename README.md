@@ -1,0 +1,2 @@
+This project was about creating a game of rock-paper-scissors, but we had to use our own theme. I chose a mafia themed based on the game Mafia. It uses the random function for the computer to cycle through the
+choices while you manually choose yours. It has three game modes as choices in the beginning: Regular (5 rounds), Best 3 out of 5, and One Round. It also have a quit button in case you don't want to play.
