@@ -1,0 +1,175 @@
+import random
+
+char_list = ["Don", "Sheriff", "Detective"]
+game_rounds = 5
+player_points = 0
+computer_points = 0
+
+game_mode = input("Hi! Welcome to Don, Sheriff, or Detective! What game mode would you like to pick?\n1. Regular Mode (5 rounds)\n2. Best 3 out of 5\n3. One Round\n4. Quit\nAnswer: ")
+print()
+
+# this section is for the Regular Mode
+if game_mode == "1":
+    print("You have chosen Regular Mode!")
+    while game_rounds > 0:
+        player_input = input("Don, Sheriff, or Detective?\nPlayer: ")
+        computers_input = random.choice(char_list)
+        print(f"Computer: {computers_input}")
+        if player_input == computers_input:
+            print("It's a tie!")
+            player_points += 0
+            computer_points += 0
+        elif player_input == "Don":
+            if computers_input == "Sheriff":
+                print(f"{player_input} beats {computers_input}. You win!")
+                player_points += 1
+                computer_points += 0
+            elif computers_input == "Detective":
+                print(f"{computers_input} beats {player_input}. You lose!")
+                player_points += 0
+                computer_points += 1
+        elif player_input == "Sheriff":
+            if computers_input == "Detective":
+                print(f"{player_input} beats {computers_input}. You win!")
+                player_points += 1
+                computer_points += 0
+            elif computers_input == "Don":
+                print(f"{computers_input} beats {player_input}. You lose!")
+                player_points += 0
+                computer_points += 1
+        elif player_input == "Detective":
+            if computers_input == "Don":
+                print(f"{player_input} beats {computers_input}. You win!")
+                player_points += 1
+                computer_points += 0
+            elif computers_input == "Sheriff":
+                print(f"{computers_input} beats {player_input}. You lose!")
+                player_points += 0
+                computer_points += 1
+        game_rounds -= 1
+
+        if game_rounds > 0:
+            next_round = input("\nTry again? (yes/no): ")
+            print()
+            if next_round == "yes":
+                continue
+            else:
+                break
+    print()
+    print(f"Final score:\nYou: {player_points}\nComputer: {computer_points}")
+    if player_points > computer_points:
+        print("You win the game! Congratulations!!!")
+    elif computer_points > player_points:
+        print("You lost the game. Better luck next time!")
+    else:
+        print("It's a tie! Thanks for playing!")
+
+# this section is for the Best 3 out of 5 Mode
+if game_mode == "2":
+    print("You have chosen Best 3 out of 5!")
+    while game_rounds > 0:
+        player_input = input("Don, Sheriff, or Detective?\nPlayer: ")
+        computers_input = random.choice(char_list)
+        print(f"Computer: {computers_input}")
+        if player_input == computers_input:
+            print("It's a tie!")
+            player_points += 0
+            computer_points += 0
+        elif player_input == "Don":
+            if computers_input == "Sheriff":
+                print(f"{player_input} beats {computers_input}. You win!")
+                player_points += 1
+                computer_points += 0
+            elif computers_input == "Detective":
+                print(f"{computers_input} beats {player_input}. You lose!")
+                player_points += 0
+                computer_points += 1
+        elif player_input == "Sheriff":
+            if computers_input == "Detective":
+                print(f"{player_input} beats {computers_input}. You win!")
+                player_points += 1
+                computer_points += 0
+            elif computers_input == "Don":
+                print(f"{computers_input} beats {player_input}. You lose!")
+                player_points += 0
+                computer_points += 1
+        elif player_input == "Detective":
+            if computers_input == "Don":
+                print(f"{player_input} beats {computers_input}. You win!")
+                player_points += 1
+                computer_points += 0
+            elif computers_input == "Sheriff":
+                print(f"{computers_input} beats {player_input}. You lose!")
+                player_points += 0
+                computer_points += 1
+        print()
+        game_rounds -= 1
+
+        if player_points == 3 or computer_points == 3:
+            break
+        else:
+            continue
+    
+    print(f"Final score:\nYou: {player_points}\nComputer: {computer_points}")
+    if player_points == 3:
+        print("You win the game! Congratulations!!!")
+    elif computer_points == 3:
+        print("You lost the game. Better luck next time!")
+    elif player_points > computer_points:
+        print("You win the game! Congratulations!!!")
+    elif computer_points > player_points:
+        print("You lost the game. Better luck next time!")
+    elif computer_points == player_points:
+        print("It's a tie! Thanks for playing!")
+    else:
+        print("Thanks for playing!")
+
+# this section is for the One Round Mode
+if game_mode == "3":
+    print("You have chosen One Round!")
+    player_input = input("Don, Sheriff, or Detective?\nPlayer: ")
+    computers_input = random.choice(char_list)
+    print(f"Computer: {computers_input}")
+    if player_input == computers_input:
+        print("It's a tie!")            
+        player_points += 0
+        computer_points += 0
+    elif player_input == "Don":
+        if computers_input == "Sheriff":
+            print(f"{player_input} beats {computers_input}. You win!")
+            player_points += 1
+            computer_points += 0
+        elif computers_input == "Detective":
+            print(f"{computers_input} beats {player_input}. You lose!")
+            player_points += 0
+            computer_points += 1
+    elif player_input == "Sheriff":
+        if computers_input == "Detective":
+            print(f"{player_input} beats {computers_input}. You win!")
+            player_points += 1
+            computer_points += 0
+        elif computers_input == "Don":
+            print(f"{computers_input} beats {player_input}. You lose!")
+            player_points += 0
+            computer_points += 1
+    elif player_input == "Detective":
+        if computers_input == "Don":
+            print(f"{player_input} beats {computers_input}. You win!")
+            player_points += 1
+            computer_points += 0
+        elif computers_input == "Sheriff":
+            print(f"{computers_input} beats {player_input}. You lose!")
+            player_points += 0
+            computer_points += 1 
+    print()
+    print(f"Final score:\nYou: {player_points}\nComputer: {computer_points}")
+    if player_points > computer_points:
+        print("You win the game! Congratulations!!!")
+    elif computer_points > player_points:
+        print("You lost the game. Better luck next time!")
+    else:
+        print("It's a tie! Thanks for playing!")
+
+# this section is for the Quit mode
+if game_mode == "4":
+    print("See you soon!")
